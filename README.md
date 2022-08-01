@@ -14,6 +14,9 @@ To install on your current ES node, use the plugin binary provided in the bin fo
 
     bin/elasticsearch-plugin  install file://<path to generated zip>/elasticsearch-concatenate-8.2.3.zip
 
+### Note for elastic.co
+If uploading the ZIP archive fails on elastic.co, unzip and rezip it. The maven-assembly-plugin seems to generate ZIP files that elastic.co doesn't like.
+
 ## Usage
 The plugin provides a token filter of type `concatenate` which has one parameter `token_separator`. Use it in your custom analyzers to merge tokenized strings back into one single token (usually after applying stemming or other token filters).
 ### Arrays
